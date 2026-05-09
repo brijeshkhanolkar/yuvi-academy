@@ -12,6 +12,9 @@ const SUBJECT_META: Record<string, { color: string; bg: string; icon: string; ex
   olympiad: { color: "#ef4444", bg: "rgba(239,68,68,0.1)", icon: "🏆", exam: "National • International" },
 };
 
+export const dynamic = "force-dynamic";
+
+
 export default async function SubjectsPage() {
   const subjects = await prisma.subject.findMany({
     where: { isActive: true },

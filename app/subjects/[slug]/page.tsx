@@ -13,6 +13,8 @@ const SUBJECT_META: Record<string, { color: string; bg: string }> = {
   olympiad: { color: "#ef4444", bg: "rgba(239,68,68,0.1)" },
 };
 
+export const dynamic = "force-dynamic";
+
 export default async function SubjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 
