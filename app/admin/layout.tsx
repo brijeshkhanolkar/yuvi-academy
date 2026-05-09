@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
 import AdminSidebar from "@/components/AdminSidebar";
 import AdminClientWrapper from "@/components/AdminClientWrapper";
+export const dynamic = "force-dynamic";
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const session = await auth();

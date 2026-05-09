@@ -2,6 +2,7 @@ import { prisma } from "@/lib/db";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import StudentNavbar from "@/components/StudentNavbar";
+export const dynamic = "force-dynamic";
 
 export default async function WatchPage({ params }: { params: Promise<{ videoId: string }> }) {
   const { videoId } = await params;
