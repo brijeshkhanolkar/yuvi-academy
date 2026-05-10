@@ -29,12 +29,12 @@ export default function Navbar() {
         left: 0,
         right: 0,
         zIndex: 1000,
-        transition: "all 0.3s ease",
-        background: scrolled
-          ? "rgba(10, 14, 26, 0.95)"
-          : "transparent",
-        backdropFilter: scrolled ? "blur(20px)" : "none",
+        transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+        background: scrolled ? "rgba(8,12,24,0.92)" : "transparent",
+        backdropFilter: scrolled ? "blur(24px)" : "none",
+        WebkitBackdropFilter: scrolled ? "blur(24px)" : "none",
         borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "none",
+        boxShadow: scrolled ? "0 4px 30px rgba(0,0,0,0.4)" : "none",
       }}
     >
       <div
@@ -45,23 +45,23 @@ export default function Navbar() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          height: "68px",
+          height: "70px",
         }}
       >
         {/* Logo */}
         <Link href="/" style={{ textDecoration: "none" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
             <div
               style={{
-                width: "40px",
-                height: "40px",
+                width: "42px",
+                height: "42px",
                 background: "linear-gradient(135deg, #FF6B00, #FF8C40)",
-                borderRadius: "10px",
+                borderRadius: "12px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: "20px",
-                boxShadow: "0 4px 15px rgba(255,107,0,0.3)",
+                fontSize: "22px",
+                boxShadow: "0 4px 20px rgba(255,107,0,0.4), 0 0 40px rgba(255,107,0,0.1)",
               }}
             >
               ⚡
@@ -69,20 +69,23 @@ export default function Navbar() {
             <div>
               <div
                 style={{
-                  fontFamily: "Poppins, sans-serif",
+                  fontFamily: "Space Grotesk, sans-serif",
                   fontWeight: 800,
-                  fontSize: "18px",
-                  color: "#f1f5f9",
+                  fontSize: "19px",
+                  color: "#f0f4ff",
                   lineHeight: 1,
+                  letterSpacing: "-0.02em",
                 }}
               >
                 Yuvi <span style={{ color: "#FF6B00" }}>Gurukul</span>
               </div>
               <div
                 style={{
-                  fontSize: "10px",
-                  color: "#64748b",
-                  letterSpacing: "0.5px",
+                  fontSize: "9px",
+                  color: "#4b5a7a",
+                  letterSpacing: "0.12em",
+                  marginTop: "2px",
+                  fontWeight: 600,
                 }}
               >
                 PHYSICS EDUPOINT
@@ -93,41 +96,62 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "8px",
-          }}
+          style={{ display: "flex", alignItems: "center", gap: "4px" }}
           className="desktop-nav"
         >
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              style={{
-                padding: "8px 16px",
-                borderRadius: "8px",
-                fontSize: "14px",
-                fontWeight: 500,
-                color: pathname === link.href ? "#FF6B00" : "#94a3b8",
-                textDecoration: "none",
-                transition: "all 0.2s ease",
-                background:
-                  pathname === link.href
-                    ? "rgba(255,107,0,0.1)"
-                    : "transparent",
-              }}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                style={{
+                  padding: "8px 18px",
+                  borderRadius: "10px",
+                  fontSize: "14px",
+                  fontWeight: 600,
+                  color: isActive ? "#FF6B00" : "#94a3b8",
+                  textDecoration: "none",
+                  transition: "all 0.25s ease",
+                  background: isActive ? "rgba(255,107,0,0.1)" : "transparent",
+                  border: isActive ? "1px solid rgba(255,107,0,0.2)" : "1px solid transparent",
+                  fontFamily: "Space Grotesk, sans-serif",
+                  letterSpacing: "-0.01em",
+                }}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
 
-          <div style={{ width: "1px", height: "24px", background: "rgba(255,255,255,0.1)", margin: "0 8px" }} />
+          <div style={{ width: "1px", height: "20px", background: "rgba(255,255,255,0.08)", margin: "0 12px" }} />
 
-          <Link href="/login" className="btn-secondary" style={{ padding: "9px 20px", fontSize: "14px" }}>
+          <Link
+            href="/login"
+            style={{
+              padding: "9px 20px",
+              borderRadius: "10px",
+              fontSize: "14px",
+              fontWeight: 600,
+              color: "#94a3b8",
+              textDecoration: "none",
+              transition: "all 0.25s ease",
+              background: "transparent",
+              border: "1px solid rgba(255,255,255,0.1)",
+              fontFamily: "Space Grotesk, sans-serif",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.color = "#f0f4ff";
+              (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.2)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.color = "#94a3b8";
+              (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.1)";
+            }}
+          >
             Login
           </Link>
-          <Link href="/register" className="btn-primary" style={{ padding: "9px 20px", fontSize: "14px" }}>
+          <Link href="/register" className="btn-primary" style={{ padding: "9px 20px", fontSize: "14px", marginLeft: "6px" }}>
             Get Started ✨
           </Link>
         </div>
@@ -137,16 +161,18 @@ export default function Navbar() {
           onClick={() => setMenuOpen(!menuOpen)}
           style={{
             display: "none",
-            background: "none",
-            border: "none",
-            color: "#f1f5f9",
+            background: "rgba(255,255,255,0.05)",
+            border: "1px solid rgba(255,255,255,0.1)",
+            borderRadius: "10px",
+            color: "#f0f4ff",
             cursor: "pointer",
-            padding: "8px",
+            padding: "8px 12px",
+            fontSize: "18px",
           }}
           className="mobile-menu-btn"
           id="mobile-menu-toggle"
         >
-          <div style={{ fontSize: "24px" }}>{menuOpen ? "✕" : "☰"}</div>
+          {menuOpen ? "✕" : "☰"}
         </button>
       </div>
 
@@ -154,10 +180,10 @@ export default function Navbar() {
       {menuOpen && (
         <div
           style={{
-            background: "rgba(10,14,26,0.98)",
-            backdropFilter: "blur(20px)",
+            background: "rgba(8,12,24,0.98)",
+            backdropFilter: "blur(24px)",
             borderTop: "1px solid rgba(255,255,255,0.06)",
-            padding: "16px 24px 24px",
+            padding: "16px 24px 28px",
           }}
         >
           {NAV_LINKS.map((link) => (
@@ -168,12 +194,14 @@ export default function Navbar() {
               style={{
                 display: "block",
                 padding: "12px 16px",
-                borderRadius: "8px",
+                borderRadius: "10px",
                 fontSize: "15px",
-                fontWeight: 500,
+                fontWeight: 600,
                 color: pathname === link.href ? "#FF6B00" : "#94a3b8",
                 textDecoration: "none",
                 marginBottom: "4px",
+                fontFamily: "Space Grotesk, sans-serif",
+                background: pathname === link.href ? "rgba(255,107,0,0.08)" : "transparent",
               }}
             >
               {link.label}

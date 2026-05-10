@@ -3,12 +3,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const SUBJECTS = [
-  { name: "Physics", slug: "physics", icon: "⚛️", color: "#3b82f6", chapters: 13, videos: "50+", desc: "Mechanics, Thermodynamics, Electromagnetism, Optics & Modern Physics" },
-  { name: "Chemistry", slug: "chemistry", icon: "🧪", color: "#10b981", chapters: 10, videos: "40+", desc: "Organic, Inorganic & Physical Chemistry with expert guidance" },
-  { name: "Mathematics", slug: "mathematics", icon: "📐", color: "#f59e0b", chapters: 11, videos: "45+", desc: "Algebra, Calculus, Geometry, Statistics & Probability" },
-  { name: "Biology", slug: "biology", icon: "🧬", color: "#ec4899", chapters: 10, videos: "35+", desc: "Cell Biology, Genetics, Ecology & Human Physiology" },
-  { name: "Robotics", slug: "robotics", icon: "🤖", color: "#8b5cf6", chapters: 7, videos: "25+", desc: "Programming, Electronics, AI & Mechanical Design" },
-  { name: "Olympiad", slug: "olympiad", icon: "🏆", color: "#ef4444", chapters: 8, videos: "30+", desc: "National & International Olympiad coaching for top performers" },
+  { name: "Physics", slug: "physics", icon: "⚛️", color: "#3b82f6", chapters: 13, videos: "50+", desc: "Mechanics, Thermodynamics, Electromagnetism, Optics & Modern Physics", exam: "JEE • NEET • MHT-CET" },
+  { name: "Chemistry", slug: "chemistry", icon: "🧪", color: "#10b981", chapters: 10, videos: "40+", desc: "Organic, Inorganic & Physical Chemistry with expert guidance", exam: "JEE • NEET • MHT-CET" },
+  { name: "Mathematics", slug: "mathematics", icon: "📐", color: "#f59e0b", chapters: 11, videos: "45+", desc: "Algebra, Calculus, Geometry, Statistics & Probability", exam: "JEE • MHT-CET" },
+  { name: "Biology", slug: "biology", icon: "🧬", color: "#ec4899", chapters: 10, videos: "35+", desc: "Cell Biology, Genetics, Ecology & Human Physiology", exam: "NEET • MHT-CET" },
+  { name: "Robotics", slug: "robotics", icon: "🤖", color: "#8b5cf6", chapters: 7, videos: "25+", desc: "Programming, Electronics, AI & Mechanical Design", exam: "Olympiad • Projects" },
+  { name: "Olympiad", slug: "olympiad", icon: "🏆", color: "#ef4444", chapters: 8, videos: "30+", desc: "National & International Olympiad coaching for top performers", exam: "NSO • IMO • IJSO" },
 ];
 
 const STATS = [
@@ -19,26 +19,26 @@ const STATS = [
 ];
 
 const FEATURES = [
-  { icon: "🎓", title: "Expert Faculty", desc: "Learn from experienced teachers with proven track records in JEE, NEET & Olympiads" },
-  { icon: "📱", title: "Study Anywhere", desc: "Access all lectures and content from any device, anytime you want" },
-  { icon: "🔄", title: "Lifetime Access", desc: "Once enrolled, access your course content forever — no expiry" },
-  { icon: "💡", title: "Concept Clarity", desc: "Deep conceptual understanding with problem-solving techniques" },
-  { icon: "📊", title: "Track Progress", desc: "Monitor your learning with detailed progress tracking and analytics" },
-  { icon: "🏆", title: "Result Oriented", desc: "Structured curriculum designed for maximum exam performance" },
+  { icon: "🎓", title: "Expert Faculty", desc: "Learn from educators with proven track records in JEE, NEET & Olympiads. Real teachers, real results." },
+  { icon: "📱", title: "Study Anywhere", desc: "Access all lectures and content from any device — mobile, tablet, or desktop — anytime, anywhere." },
+  { icon: "🔄", title: "Lifetime Access", desc: "Once enrolled, access your course content forever. No subscription, no expiry. Always yours." },
+  { icon: "💡", title: "Concept Clarity", desc: "Deep conceptual understanding backed by problem-solving techniques that make tough topics simple." },
+  { icon: "📊", title: "Track Progress", desc: "Monitor your learning journey with detailed chapter-wise progress tracking and completion status." },
+  { icon: "🏆", title: "Result Oriented", desc: "Curriculum designed for maximum exam performance. Every topic mapped to your target exam syllabus." },
 ];
 
 const TESTIMONIALS = [
-  { name: "Arjun Patil", score: "JEE Advanced AIR 847", text: "Yuvi Gurukul's Physics lectures are exceptional. The clarity of concepts helped me crack JEE Advanced!", avatar: "A" },
-  { name: "Priya Sharma", score: "NEET Score: 720/720", text: "The Biology and Chemistry content is absolutely top-notch. I couldn't have achieved this without Yuvi Gurukul!", avatar: "P" },
-  { name: "Rohan Desai", score: "MHT-CET: 99.8%ile", text: "The robotics course helped me think analytically. Highly recommend this platform to every student!", avatar: "R" },
+  { name: "Arjun Patil", score: "JEE Advanced AIR 847", text: "Yuvi Gurukul's Physics lectures are exceptional. The clarity of concepts helped me crack JEE Advanced!", avatar: "A", color: "#3b82f6" },
+  { name: "Priya Sharma", score: "NEET Score: 720/720", text: "The Biology and Chemistry content is absolutely top-notch. I couldn't have achieved this without Yuvi Gurukul!", avatar: "P", color: "#ec4899" },
+  { name: "Rohan Desai", score: "MHT-CET: 99.8%ile", text: "The robotics course helped me think analytically. Highly recommend this platform to every student!", avatar: "R", color: "#8b5cf6" },
 ];
 
 export default function HomePage() {
   return (
-    <main style={{ background: "#0a0e1a", minHeight: "100vh" }}>
+    <main style={{ background: "#080c18", minHeight: "100vh" }}>
       <Navbar />
 
-      {/* ===== HERO SECTION ===== */}
+      {/* ═══ HERO SECTION ═══ */}
       <section
         style={{
           minHeight: "100vh",
@@ -46,29 +46,32 @@ export default function HomePage() {
           alignItems: "center",
           position: "relative",
           overflow: "hidden",
-          paddingTop: "68px",
+          paddingTop: "70px",
         }}
         className="grid-bg"
       >
-        {/* Background glows */}
-        <div style={{ position: "absolute", top: "15%", left: "5%", width: "400px", height: "400px", background: "radial-gradient(circle, rgba(255,107,0,0.12) 0%, transparent 70%)", pointerEvents: "none" }} />
-        <div style={{ position: "absolute", bottom: "15%", right: "5%", width: "400px", height: "400px", background: "radial-gradient(circle, rgba(26,35,126,0.3) 0%, transparent 70%)", pointerEvents: "none" }} />
+        {/* Ambient glows */}
+        <div style={{ position: "absolute", top: "10%", left: "-5%", width: "600px", height: "600px", background: "radial-gradient(circle, rgba(255,107,0,0.07) 0%, transparent 65%)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", bottom: "5%", right: "-5%", width: "500px", height: "500px", background: "radial-gradient(circle, rgba(124,58,237,0.07) 0%, transparent 65%)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", top: "40%", right: "30%", width: "300px", height: "300px", background: "radial-gradient(circle, rgba(59,130,246,0.05) 0%, transparent 70%)", pointerEvents: "none" }} />
 
         <div className="container" style={{ width: "100%", padding: "80px 24px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "60px", alignItems: "center" }}>
-            {/* Left */}
-            <div className="animate-slide-up">
-              <div className="badge badge-orange" style={{ marginBottom: "20px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px", alignItems: "center" }} className="hero-grid">
+
+            {/* Left content */}
+            <div className="animate-fade-slide-up">
+              <div className="badge badge-orange" style={{ marginBottom: "24px" }}>
                 🚀 #1 Study Platform in Kolhapur
               </div>
 
               <h1
                 style={{
-                  fontFamily: "Poppins, sans-serif",
+                  fontFamily: "Space Grotesk, sans-serif",
                   fontWeight: 900,
-                  fontSize: "clamp(36px, 5vw, 64px)",
-                  lineHeight: 1.1,
-                  color: "#f1f5f9",
+                  fontSize: "clamp(38px, 5.5vw, 68px)",
+                  lineHeight: 1.0,
+                  letterSpacing: "-0.04em",
+                  color: "#f0f4ff",
                   marginBottom: "24px",
                 }}
               >
@@ -82,58 +85,60 @@ export default function HomePage() {
               <p
                 style={{
                   fontSize: "18px",
-                  color: "#94a3b8",
+                  color: "#64748b",
                   lineHeight: 1.8,
-                  marginBottom: "36px",
-                  maxWidth: "500px",
+                  marginBottom: "40px",
+                  maxWidth: "480px",
                 }}
               >
-                Yuvi Gurukul offers world-class video lectures for JEE, NEET, MHT-CET & Olympiad
-                preparation. Expert teaching. Proven results. Lifetime access.
+                Yuvi Gurukul offers world-class video lectures for JEE, NEET, MHT-CET & Olympiad preparation. Expert teaching. Proven results. Lifetime access.
               </p>
 
-              <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", marginBottom: "48px" }}>
-                <Link href="/register" className="btn-primary" style={{ fontSize: "16px", padding: "14px 32px" }}>
+              <div style={{ display: "flex", gap: "14px", flexWrap: "wrap", marginBottom: "52px" }}>
+                <Link href="/register" className="btn-primary" style={{ fontSize: "16px", padding: "15px 32px" }}>
                   Start Learning Free 🚀
                 </Link>
-                <a href="https://www.youtube.com/@physicsedupoint" target="_blank" rel="noopener noreferrer" className="btn-secondary" style={{ fontSize: "16px", padding: "14px 32px" }}>
-                  ▶ Watch on YouTube
+                <a href="https://www.youtube.com/@physicsedupoint" target="_blank" rel="noopener noreferrer" className="btn-secondary" style={{ fontSize: "16px", padding: "15px 32px" }}>
+                  ▶ YouTube Channel
                 </a>
               </div>
 
               {/* Mini stats */}
-              <div style={{ display: "flex", gap: "32px", flexWrap: "wrap" }}>
+              <div style={{ display: "flex", gap: "36px", flexWrap: "wrap" }}>
                 {STATS.slice(0, 3).map((s) => (
                   <div key={s.label}>
-                    <div style={{ fontFamily: "Poppins", fontWeight: 800, fontSize: "28px", color: "#FF6B00" }}>
+                    <div style={{ fontFamily: "Space Grotesk, sans-serif", fontWeight: 900, fontSize: "30px", color: "#FF6B00", letterSpacing: "-0.03em", lineHeight: 1 }}>
                       {s.number}
                     </div>
-                    <div style={{ fontSize: "13px", color: "#64748b" }}>{s.label}</div>
+                    <div style={{ fontSize: "12px", color: "#4b5a7a", marginTop: "4px", fontWeight: 600, letterSpacing: "0.02em" }}>{s.label}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Right — Hero visual */}
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-              <div
-                className="animate-float"
-                style={{
-                  width: "380px",
-                  height: "380px",
-                  position: "relative",
-                }}
-              >
-                {/* Outer ring */}
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} className="hero-visual">
+              <div className="animate-float" style={{ width: "400px", height: "400px", position: "relative" }}>
+                {/* Outer rotating ring */}
                 <div
                   className="animate-spin-slow"
                   style={{
                     position: "absolute",
                     inset: "0",
-                    border: "2px dashed rgba(255,107,0,0.2)",
+                    border: "1px dashed rgba(255,107,0,0.25)",
                     borderRadius: "50%",
                   }}
                 />
+                {/* Inner ring */}
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: "30px",
+                    border: "1px solid rgba(255,255,255,0.04)",
+                    borderRadius: "50%",
+                  }}
+                />
+
                 {/* Center card */}
                 <div
                   style={{
@@ -141,33 +146,33 @@ export default function HomePage() {
                     top: "50%",
                     left: "50%",
                     transform: "translate(-50%, -50%)",
-                    width: "260px",
-                    background: "linear-gradient(135deg, #111827, #1a2236)",
-                    border: "1px solid rgba(255,107,0,0.3)",
-                    borderRadius: "20px",
-                    padding: "28px",
+                    width: "220px",
+                    background: "linear-gradient(135deg, #0e1423, #141929)",
+                    border: "1px solid rgba(255,107,0,0.35)",
+                    borderRadius: "24px",
+                    padding: "32px 24px",
                     textAlign: "center",
-                    boxShadow: "0 20px 60px rgba(0,0,0,0.5), 0 0 30px rgba(255,107,0,0.1)",
+                    boxShadow: "0 30px 80px rgba(0,0,0,0.6), 0 0 60px rgba(255,107,0,0.1)",
                   }}
                 >
-                  <div style={{ fontSize: "60px", marginBottom: "12px" }}>⚡</div>
-                  <div style={{ fontFamily: "Poppins", fontWeight: 800, fontSize: "22px", color: "#f1f5f9", marginBottom: "6px" }}>
+                  <div style={{ fontSize: "52px", marginBottom: "14px" }}>⚡</div>
+                  <div style={{ fontFamily: "Space Grotesk, sans-serif", fontWeight: 900, fontSize: "20px", color: "#f0f4ff", marginBottom: "6px", letterSpacing: "-0.02em" }}>
                     Yuvi Gurukul
                   </div>
-                  <div style={{ fontSize: "13px", color: "#64748b", marginBottom: "16px" }}>Physics Edupoint, Kolhapur</div>
+                  <div style={{ fontSize: "12px", color: "#4b5a7a", marginBottom: "18px", fontWeight: 600 }}>Physics Edupoint, Kolhapur</div>
                   <div style={{ display: "flex", gap: "6px", justifyContent: "center", flexWrap: "wrap" }}>
                     {["JEE", "NEET", "MHT-CET"].map((t) => (
-                      <span key={t} className="badge badge-orange" style={{ fontSize: "11px" }}>{t}</span>
+                      <span key={t} className="badge badge-orange" style={{ fontSize: "10px" }}>{t}</span>
                     ))}
                   </div>
                 </div>
 
-                {/* Floating badges */}
+                {/* Floating subject badges */}
                 {[
-                  { emoji: "⚛️", label: "Physics", top: "8%", left: "-5%" },
-                  { emoji: "🧪", label: "Chemistry", top: "8%", right: "-5%" },
-                  { emoji: "📐", label: "Math", bottom: "15%", left: "-8%" },
-                  { emoji: "🤖", label: "Robotics", bottom: "15%", right: "-8%" },
+                  { emoji: "⚛️", label: "Physics", top: "6%", left: "-10%" },
+                  { emoji: "🧪", label: "Chemistry", top: "6%", right: "-10%" },
+                  { emoji: "📐", label: "Math", bottom: "12%", left: "-12%" },
+                  { emoji: "🤖", label: "Robotics", bottom: "12%", right: "-12%" },
                 ].map((b) => (
                   <div
                     key={b.label}
@@ -177,70 +182,83 @@ export default function HomePage() {
                       bottom: b.bottom,
                       left: b.left,
                       right: b.right,
-                      background: "#111827",
-                      border: "1px solid rgba(255,255,255,0.1)",
-                      borderRadius: "12px",
-                      padding: "10px 14px",
+                      background: "rgba(14,20,35,0.9)",
+                      border: "1px solid rgba(255,255,255,0.08)",
+                      borderRadius: "14px",
+                      padding: "10px 16px",
                       display: "flex",
                       alignItems: "center",
-                      gap: "6px",
-                      boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
+                      gap: "8px",
+                      boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+                      backdropFilter: "blur(12px)",
                     }}
                   >
-                    <span style={{ fontSize: "18px" }}>{b.emoji}</span>
-                    <span style={{ fontSize: "12px", fontWeight: 600, color: "#94a3b8" }}>{b.label}</span>
+                    <span style={{ fontSize: "20px" }}>{b.emoji}</span>
+                    <span style={{ fontSize: "12px", fontWeight: 700, color: "#94a3b8", fontFamily: "Space Grotesk, sans-serif" }}>{b.label}</span>
                   </div>
                 ))}
               </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* ===== STATS BAR ===== */}
-      <section style={{ background: "linear-gradient(135deg, #FF6B00, #e55a00)", padding: "40px 0" }}>
+      {/* ═══ STATS BAR ═══ */}
+      <section
+        style={{
+          background: "linear-gradient(135deg, #FF6B00, #cc5500)",
+          padding: "50px 0",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <div style={{ position: "absolute", inset: 0, background: "url('data:image/svg+xml,...')", opacity: 0.05 }} />
         <div className="container">
           <div style={{ display: "flex", justifyContent: "space-around", flexWrap: "wrap", gap: "24px" }}>
             {STATS.map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
-                <div style={{ fontSize: "32px", marginBottom: "4px" }}>{s.icon}</div>
-                <div style={{ fontFamily: "Poppins", fontWeight: 800, fontSize: "32px", color: "white" }}>{s.number}</div>
-                <div style={{ fontSize: "14px", color: "rgba(255,255,255,0.8)", fontWeight: 500 }}>{s.label}</div>
+                <div style={{ fontSize: "32px", marginBottom: "6px" }}>{s.icon}</div>
+                <div style={{ fontFamily: "Space Grotesk, sans-serif", fontWeight: 900, fontSize: "36px", color: "white", letterSpacing: "-0.04em" }}>{s.number}</div>
+                <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.75)", fontWeight: 600, marginTop: "2px" }}>{s.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===== SUBJECTS SECTION ===== */}
-      <section style={{ padding: "100px 0" }}>
+      {/* ═══ SUBJECTS SECTION ═══ */}
+      <section style={{ padding: "110px 0" }}>
         <div className="container">
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <div className="badge badge-orange" style={{ marginBottom: "16px" }}>📚 Our Subjects</div>
+          <div style={{ textAlign: "center", marginBottom: "64px" }}>
+            <div className="badge badge-orange" style={{ marginBottom: "18px" }}>📚 Our Subjects</div>
             <h2 className="section-title">
               Master Every <span className="text-gradient">Subject</span>
             </h2>
-            <p className="section-sub" style={{ margin: "0 auto" }}>
+            <p className="section-sub" style={{ margin: "16px auto 0" }}>
               Expert-crafted courses for JEE, NEET, MHT-CET & Olympiad preparation
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "20px" }}>
             {SUBJECTS.map((sub) => (
-              <Link
-                key={sub.slug}
-                href={`/subjects/${sub.slug}`}
-                style={{ textDecoration: "none" }}
-              >
-                <div className="card" style={{ height: "100%", cursor: "pointer" }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "16px" }}>
+              <Link key={sub.slug} href={`/subjects/${sub.slug}`} style={{ textDecoration: "none" }}>
+                <div
+                  className="glass-card"
+                  style={{
+                    padding: "28px",
+                    height: "100%",
+                    cursor: "pointer",
+                  }}
+                >
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "18px" }}>
                     <div
                       style={{
-                        width: "56px",
-                        height: "56px",
-                        borderRadius: "14px",
-                        background: `${sub.color}20`,
-                        border: `1px solid ${sub.color}40`,
+                        width: "58px",
+                        height: "58px",
+                        borderRadius: "16px",
+                        background: `${sub.color}18`,
+                        border: `1px solid ${sub.color}35`,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -249,21 +267,32 @@ export default function HomePage() {
                     >
                       {sub.icon}
                     </div>
-                    <span className="badge" style={{ background: `${sub.color}15`, color: sub.color, border: `1px solid ${sub.color}30`, fontSize: "11px" }}>
+                    <span
+                      style={{
+                        background: `${sub.color}15`,
+                        color: sub.color,
+                        border: `1px solid ${sub.color}30`,
+                        padding: "4px 12px",
+                        borderRadius: "100px",
+                        fontSize: "11px",
+                        fontWeight: 700,
+                        fontFamily: "Space Grotesk, sans-serif",
+                      }}
+                    >
                       {sub.videos} videos
                     </span>
                   </div>
-                  <h3 style={{ fontFamily: "Poppins", fontWeight: 700, fontSize: "20px", color: "#f1f5f9", marginBottom: "8px" }}>
+                  <h3 style={{ fontFamily: "Space Grotesk, sans-serif", fontWeight: 800, fontSize: "21px", color: "#f0f4ff", marginBottom: "8px", letterSpacing: "-0.02em" }}>
                     {sub.name}
                   </h3>
-                  <p style={{ fontSize: "14px", color: "#64748b", lineHeight: 1.6, marginBottom: "20px" }}>
+                  <p style={{ fontSize: "14px", color: "#4b5a7a", lineHeight: 1.7, marginBottom: "18px" }}>
                     {sub.desc}
                   </p>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <span style={{ fontSize: "13px", color: "#475569" }}>
+                    <span style={{ fontSize: "12px", color: "#2d3a50", fontWeight: 600 }}>
                       📖 {sub.chapters} chapters
                     </span>
-                    <span style={{ fontSize: "13px", color: sub.color, fontWeight: 600 }}>
+                    <span style={{ fontSize: "13px", color: sub.color, fontWeight: 700, fontFamily: "Space Grotesk, sans-serif" }}>
                       Explore →
                     </span>
                   </div>
@@ -272,34 +301,34 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div style={{ textAlign: "center", marginTop: "48px" }}>
-            <Link href="/subjects" className="btn-primary" style={{ fontSize: "16px", padding: "14px 36px" }}>
+          <div style={{ textAlign: "center", marginTop: "52px" }}>
+            <Link href="/subjects" className="btn-primary" style={{ fontSize: "16px", padding: "15px 40px" }}>
               View All Subjects 📚
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ===== FEATURES SECTION ===== */}
-      <section style={{ padding: "100px 0", background: "#060a14" }}>
+      {/* ═══ FEATURES SECTION ═══ */}
+      <section style={{ padding: "110px 0", background: "#060a14" }}>
         <div className="container">
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <div className="badge badge-blue" style={{ marginBottom: "16px" }}>✨ Why Yuvi Gurukul</div>
+          <div style={{ textAlign: "center", marginBottom: "64px" }}>
+            <div className="badge badge-blue" style={{ marginBottom: "18px" }}>✨ Why Yuvi Gurukul</div>
             <h2 className="section-title">
               Why Students <span className="text-gradient">Choose Us</span>
             </h2>
-            <p className="section-sub" style={{ margin: "0 auto" }}>
+            <p className="section-sub" style={{ margin: "16px auto 0" }}>
               We combine expert teaching with modern technology to deliver the best learning experience
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "20px" }}>
             {FEATURES.map((f) => (
-              <div key={f.title} className="card" style={{ textAlign: "center" }}>
+              <div key={f.title} className="glass-card" style={{ padding: "32px 28px" }}>
                 <div
                   style={{
-                    width: "64px",
-                    height: "64px",
+                    width: "60px",
+                    height: "60px",
                     borderRadius: "16px",
                     background: "rgba(255,107,0,0.1)",
                     border: "1px solid rgba(255,107,0,0.2)",
@@ -307,15 +336,15 @@ export default function HomePage() {
                     alignItems: "center",
                     justifyContent: "center",
                     fontSize: "28px",
-                    margin: "0 auto 16px",
+                    marginBottom: "18px",
                   }}
                 >
                   {f.icon}
                 </div>
-                <h3 style={{ fontFamily: "Poppins", fontWeight: 700, fontSize: "17px", color: "#f1f5f9", marginBottom: "8px" }}>
+                <h3 style={{ fontFamily: "Space Grotesk, sans-serif", fontWeight: 700, fontSize: "18px", color: "#f0f4ff", marginBottom: "10px", letterSpacing: "-0.01em" }}>
                   {f.title}
                 </h3>
-                <p style={{ fontSize: "14px", color: "#64748b", lineHeight: 1.7 }}>
+                <p style={{ fontSize: "14px", color: "#4b5a7a", lineHeight: 1.8 }}>
                   {f.desc}
                 </p>
               </div>
@@ -324,26 +353,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== YOUTUBE SECTION ===== */}
-      <section style={{ padding: "100px 0" }}>
+      {/* ═══ YOUTUBE SECTION ═══ */}
+      <section style={{ padding: "110px 0" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "60px", alignItems: "center" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px", alignItems: "center" }} className="youtube-grid">
             <div>
-              <div className="badge badge-orange" style={{ marginBottom: "16px" }}>▶ YouTube Channel</div>
+              <div className="badge badge-orange" style={{ marginBottom: "18px" }}>▶ YouTube Channel</div>
               <h2 className="section-title">
-                Watch Free <span className="text-gradient">Lectures</span> on YouTube
+                Watch Free <span className="text-gradient">Lectures</span>{" "}
+                on YouTube
               </h2>
-              <p style={{ color: "#94a3b8", fontSize: "16px", lineHeight: 1.8, marginBottom: "32px" }}>
-                Subscribe to <strong style={{ color: "#FF6B00" }}>Physics Edupoint</strong> on YouTube for free lectures,
-                concept explanations, and exam tips. Hundreds of videos available for free!
+              <p style={{ color: "#64748b", fontSize: "16px", lineHeight: 1.8, marginBottom: "32px", marginTop: "16px" }}>
+                Subscribe to{" "}
+                <strong style={{ color: "#FF6B00" }}>Physics Edupoint</strong>{" "}
+                on YouTube for free lectures, concept explanations, and exam tips. Hundreds of videos available for free!
               </p>
-              <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-                <a
-                  href="https://www.youtube.com/@physicsedupoint"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary"
-                >
+              <div style={{ display: "flex", gap: "14px", flexWrap: "wrap" }}>
+                <a href="https://www.youtube.com/@physicsedupoint" target="_blank" rel="noopener noreferrer" className="btn-primary">
                   ▶ Subscribe on YouTube
                 </a>
                 <Link href="/subjects" className="btn-secondary">
@@ -353,15 +379,15 @@ export default function HomePage() {
             </div>
             <div
               style={{
-                borderRadius: "20px",
+                borderRadius: "24px",
                 overflow: "hidden",
-                boxShadow: "0 20px 60px rgba(0,0,0,0.5)",
+                boxShadow: "0 30px 80px rgba(0,0,0,0.6), 0 0 60px rgba(255,107,0,0.08)",
                 border: "1px solid rgba(255,107,0,0.2)",
               }}
             >
               <iframe
                 width="100%"
-                height="280"
+                height="300"
                 src="https://www.youtube.com/embed/videoseries?list=UU3IkaqNikI4x0CPYD58ZANA"
                 title="Physics Edupoint YouTube Channel"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -373,46 +399,48 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== TESTIMONIALS ===== */}
-      <section style={{ padding: "100px 0", background: "#060a14" }}>
+      {/* ═══ TESTIMONIALS ═══ */}
+      <section style={{ padding: "110px 0", background: "#060a14" }}>
         <div className="container">
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <div className="badge badge-orange" style={{ marginBottom: "16px" }}>⭐ Student Stories</div>
+          <div style={{ textAlign: "center", marginBottom: "64px" }}>
+            <div className="badge badge-orange" style={{ marginBottom: "18px" }}>⭐ Student Stories</div>
             <h2 className="section-title">
               What Our <span className="text-gradient">Students Say</span>
             </h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "20px" }}>
             {TESTIMONIALS.map((t) => (
-              <div key={t.name} className="card">
-                <div style={{ display: "flex", gap: "3px", marginBottom: "16px" }}>
+              <div key={t.name} className="glass-card" style={{ padding: "32px 28px" }}>
+                <div style={{ display: "flex", gap: "3px", marginBottom: "18px" }}>
                   {[...Array(5)].map((_, i) => (
                     <span key={i} style={{ color: "#FF6B00", fontSize: "16px" }}>★</span>
                   ))}
                 </div>
-                <p style={{ color: "#94a3b8", fontSize: "14px", lineHeight: 1.8, marginBottom: "20px", fontStyle: "italic" }}>
-                  "{t.text}"
+                <p style={{ color: "#64748b", fontSize: "15px", lineHeight: 1.8, marginBottom: "24px", fontStyle: "italic" }}>
+                  &ldquo;{t.text}&rdquo;
                 </p>
-                <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
                   <div
                     style={{
-                      width: "44px",
-                      height: "44px",
+                      width: "48px",
+                      height: "48px",
                       borderRadius: "50%",
-                      background: "linear-gradient(135deg, #FF6B00, #FF8C40)",
+                      background: `linear-gradient(135deg, ${t.color}, ${t.color}80)`,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      fontFamily: "Poppins",
-                      fontWeight: 700,
+                      fontFamily: "Space Grotesk, sans-serif",
+                      fontWeight: 800,
                       color: "white",
-                      fontSize: "18px",
+                      fontSize: "20px",
+                      flexShrink: 0,
+                      boxShadow: `0 0 20px ${t.color}40`,
                     }}
                   >
                     {t.avatar}
                   </div>
                   <div>
-                    <div style={{ fontWeight: 600, color: "#f1f5f9", fontSize: "15px" }}>{t.name}</div>
+                    <div style={{ fontWeight: 700, color: "#f0f4ff", fontSize: "15px", fontFamily: "Space Grotesk, sans-serif" }}>{t.name}</div>
                     <div style={{ fontSize: "12px", color: "#FF6B00", fontWeight: 600 }}>{t.score}</div>
                   </div>
                 </div>
@@ -422,36 +450,37 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== CTA SECTION ===== */}
-      <section style={{ padding: "100px 0" }}>
+      {/* ═══ CTA SECTION ═══ */}
+      <section style={{ padding: "110px 0" }}>
         <div className="container">
           <div
             style={{
-              background: "linear-gradient(135deg, #1a237e, #0d1757)",
-              border: "1px solid rgba(255,107,0,0.2)",
-              borderRadius: "24px",
-              padding: "80px 40px",
+              background: "linear-gradient(135deg, #100520, #0d1030)",
+              border: "1px solid rgba(124,58,237,0.2)",
+              borderRadius: "28px",
+              padding: "90px 40px",
               textAlign: "center",
               position: "relative",
               overflow: "hidden",
             }}
           >
-            <div style={{ position: "absolute", top: "-50px", right: "-50px", width: "200px", height: "200px", background: "radial-gradient(circle, rgba(255,107,0,0.15) 0%, transparent 70%)" }} />
-            <div style={{ position: "absolute", bottom: "-50px", left: "-50px", width: "200px", height: "200px", background: "radial-gradient(circle, rgba(255,107,0,0.1) 0%, transparent 70%)" }} />
+            <div style={{ position: "absolute", top: "-80px", right: "-80px", width: "350px", height: "350px", background: "radial-gradient(circle, rgba(255,107,0,0.1) 0%, transparent 70%)" }} />
+            <div style={{ position: "absolute", bottom: "-80px", left: "-80px", width: "350px", height: "350px", background: "radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%)" }} />
             <div style={{ position: "relative", zIndex: 1 }}>
               <div style={{ fontSize: "60px", marginBottom: "20px" }}>🚀</div>
-              <h2 className="section-title" style={{ color: "#f1f5f9", marginBottom: "16px" }}>
-                Ready to Start Your <span className="text-gradient">Success Journey?</span>
+              <h2 className="section-title" style={{ color: "#f0f4ff", marginBottom: "16px" }}>
+                Ready to Start Your{" "}
+                <span className="text-gradient">Success Journey?</span>
               </h2>
-              <p style={{ color: "#94a3b8", fontSize: "17px", maxWidth: "500px", margin: "0 auto 40px" }}>
+              <p style={{ color: "#64748b", fontSize: "18px", maxWidth: "520px", margin: "0 auto 44px", lineHeight: 1.7 }}>
                 Join thousands of students already learning with Yuvi Gurukul. Registration is completely free!
               </p>
               <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
-                <Link href="/register" className="btn-primary" style={{ fontSize: "16px", padding: "14px 36px" }}>
+                <Link href="/register" className="btn-primary" style={{ fontSize: "17px", padding: "16px 40px" }}>
                   Join For Free 🎓
                 </Link>
-                <Link href="/contact" className="btn-secondary" style={{ fontSize: "16px", padding: "14px 36px", borderColor: "rgba(255,255,255,0.2)" }}>
-                  Contact Us
+                <Link href="/about" className="btn-secondary" style={{ fontSize: "17px", padding: "16px 40px" }}>
+                  Learn About Us
                 </Link>
               </div>
             </div>
@@ -463,8 +492,9 @@ export default function HomePage() {
 
       <style>{`
         @media (max-width: 768px) {
-          .hero-grid { grid-template-columns: 1fr !important; }
+          .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
           .hero-visual { display: none !important; }
+          .youtube-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
         }
       `}</style>
     </main>
