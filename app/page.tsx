@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 const SUBJECTS = [
   { name: "Physics", slug: "physics", icon: "⚛️", color: "#3b82f6", chapters: 13, videos: "50+", desc: "Mechanics, Thermodynamics, Electromagnetism, Optics & Modern Physics", exam: "JEE • NEET • MHT-CET" },
@@ -155,7 +156,9 @@ export default function HomePage() {
                     boxShadow: "0 30px 80px rgba(0,0,0,0.6), 0 0 60px rgba(255,107,0,0.1)",
                   }}
                 >
-                  <div style={{ fontSize: "52px", marginBottom: "14px" }}>⚡</div>
+                  <div style={{ marginBottom: "14px", display: "flex", justifyContent: "center" }}>
+                    <Image src="/logo.png" alt="Yuvi Gurukul" width={80} height={80} style={{ objectFit: "contain", height: "60px", width: "auto" }} />
+                  </div>
                   <div style={{ fontFamily: "Space Grotesk, sans-serif", fontWeight: 900, fontSize: "20px", color: "#f0f4ff", marginBottom: "6px", letterSpacing: "-0.02em" }}>
                     Yuvi Gurukul
                   </div>

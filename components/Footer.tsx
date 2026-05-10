@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 
 const SOCIAL_LINKS = [
   { label: "YouTube", href: "https://www.youtube.com/@physicsedupoint", icon: "▶", color: "#ff0000" },
@@ -31,28 +32,14 @@ export default function Footer() {
         >
           {/* Brand */}
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "18px" }}>
-              <div
-                style={{
-                  width: "44px",
-                  height: "44px",
-                  background: "linear-gradient(135deg, #FF6B00, #FF8C40)",
-                  borderRadius: "12px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "22px",
-                  boxShadow: "0 4px 20px rgba(255,107,0,0.3)",
-                }}
-              >
-                ⚡
-              </div>
-              <div>
-                <div style={{ fontFamily: "Space Grotesk, sans-serif", fontWeight: 800, color: "#f0f4ff", fontSize: "18px", letterSpacing: "-0.02em" }}>
-                  Yuvi <span style={{ color: "#FF6B00" }}>Gurukul</span>
-                </div>
-                <div style={{ fontSize: "9px", color: "#4b5a7a", letterSpacing: "0.12em", fontWeight: 600 }}>PHYSICS EDUPOINT</div>
-              </div>
+            <div style={{ marginBottom: "18px" }}>
+              <Image
+                src="/logo.png"
+                alt="Yuvi Gurukul"
+                width={160}
+                height={56}
+                style={{ objectFit: "contain", height: "52px", width: "auto" }}
+              />
             </div>
             <p style={{ color: "#4b5a7a", fontSize: "14px", lineHeight: 1.8, marginBottom: "24px", maxWidth: "280px" }}>
               Excellence in education. Strong roots create successful minds. Serving students from Rajarampuri, Kolhapur.

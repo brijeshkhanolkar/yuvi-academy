@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
@@ -50,47 +51,15 @@ export default function Navbar() {
       >
         {/* Logo */}
         <Link href="/" style={{ textDecoration: "none" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-            <div
-              style={{
-                width: "42px",
-                height: "42px",
-                background: "linear-gradient(135deg, #FF6B00, #FF8C40)",
-                borderRadius: "12px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "22px",
-                boxShadow: "0 4px 20px rgba(255,107,0,0.4), 0 0 40px rgba(255,107,0,0.1)",
-              }}
-            >
-              ⚡
-            </div>
-            <div>
-              <div
-                style={{
-                  fontFamily: "Space Grotesk, sans-serif",
-                  fontWeight: 800,
-                  fontSize: "19px",
-                  color: "#f0f4ff",
-                  lineHeight: 1,
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                Yuvi <span style={{ color: "#FF6B00" }}>Gurukul</span>
-              </div>
-              <div
-                style={{
-                  fontSize: "9px",
-                  color: "#4b5a7a",
-                  letterSpacing: "0.12em",
-                  marginTop: "2px",
-                  fontWeight: 600,
-                }}
-              >
-                PHYSICS EDUPOINT
-              </div>
-            </div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <Image
+              src="/logo.png"
+              alt="Yuvi Gurukul"
+              width={160}
+              height={56}
+              style={{ objectFit: "contain", height: "48px", width: "auto" }}
+              priority
+            />
           </div>
         </Link>
 

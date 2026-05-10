@@ -1,14 +1,16 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 const TEAM = [
   {
-    name: "Yuvi Sir",
+    name: "Ritesh Dalal Sir",
     role: "Founder & Lead Educator",
-    subjects: ["Physics", "Mathematics"],
-    bio: "With over 10 years of teaching experience, Yuvi Sir has helped thousands of students crack JEE, NEET and MHT-CET with his unique conceptual teaching approach.",
-    avatar: "Y",
+    subjects: ["Physics"],
+    bio: "With years of profound teaching experience, Ritesh Dalal Sir has helped thousands of students crack JEE, NEET and MHT-CET. His unique, conceptual approach to Physics makes complex topics easy to understand and master.",
+    avatar: "R",
+    image: "/ritesh-dalal.jpg",
     color: "#FF6B00",
   },
 ];
@@ -250,9 +252,14 @@ export default function AboutPage() {
                       color: "white",
                       margin: "0 auto",
                       boxShadow: "0 0 40px rgba(255,107,0,0.4), 0 0 80px rgba(255,107,0,0.15)",
+                      overflow: "hidden",
                     }}
                   >
-                    {member.avatar}
+                    {member.image ? (
+                      <Image src={member.image} alt={member.name} width={96} height={96} style={{ objectFit: "cover", width: "100%", height: "100%" }} />
+                    ) : (
+                      member.avatar
+                    )}
                   </div>
                   <div
                     style={{
